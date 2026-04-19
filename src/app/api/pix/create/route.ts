@@ -84,10 +84,54 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    console.log("[pix] resposta da pagou.ai:", JSON.stringify(data));
+
+    // A Pagou AI pode retornar o código PIX em campos diferentes — tentamos vários
+    const qrCode =
+      data.pix?.qrcode ??
+      data.pix?.qrCode ??
+      data.pix?.payload ??
+      data.pix?.code ??
+      data.pix?.emv ??
+      data.qrcode ??
+      data.qrCode ??
+      data.payload ??
+      data.code ??
+      null;
+
+    const apiExpiresAt =
+      data.pix?.expirationDate ??
+      data.pix?.expiresAt ??
+      data.pix?.expiration ??
+      data.expiresAt ??
+      data.expirationDate ??
+      null;
+
+    if (!qrCode) {
+      console.error("[pix] resposta sem código PIX. Payload completo:", JSON.stringify(data));
+      return NextResponse.json(
+        {
+          error: "Resposta inválida do gateway",
+          detail: "Código PIX não retornado pela Pagou AI. Verifique se sua conta tem PIX habilitado.",
+        },
+        { status: 502 }
+      );
+    }
+
+    // Garante que expiresAt seja sempre um ISO completo (não apenas YYYY-MM-DD)
+    let expiresIso = expiresAt.toISOString();
+    if (apiExpiresAt) {
+      const parsed = new Date(apiExpiresAt);
+      // Se for só uma data (YYYY-MM-DD), usamos nosso fallback de 1 hora
+      if (!isNaN(parsed.getTime()) && String(apiExpiresAt).length > 10) {
+        expiresIso = parsed.toISOString();
+      }
+    }
+
     return NextResponse.json({
-      txid: data.id ?? data.txid,
-      qrCode: data.pix?.qrcode,
-      expiresAt: data.pix?.expirationDate ?? expiresAt.toISOString(),
+      txid: data.id ?? data.txid ?? data.transactionId,
+      qrCode,
+      expiresAt: expiresIso,
       amount: value,
       phone: phoneDigits,
     });
