@@ -16,7 +16,7 @@ export function ScheduledRechargeBanner() {
               alt="Homem segurando celular com tela roxa"
               fill
               sizes="(max-width: 768px) 55vw, 400px"
-              className="object-contain object-bottom-right"
+              className="object-contain object-right-bottom"
               priority={false}
             />
           </div>
