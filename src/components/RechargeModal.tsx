@@ -128,7 +128,22 @@ export function RechargeModal({ value, variant, onClose }: RechargeModalProps) {
       const data = await res.json();
 
       if (!res.ok) {
-        setApiError(data.detail ?? data.error ?? "Erro ao gerar PIX. Tente novamente.");
+        const rawError = String(data.detail ?? data.error ?? "").toLowerCase();
+        let friendlyError = "Erro ao gerar PIX. Tente novamente.";
+
+        if (rawError.includes("invalid cpf") || rawError.includes("cpf inválido") || rawError.includes("cpf invalido")) {
+          friendlyError = "CPF Inválido";
+        } else if (rawError.includes("invalid email")) {
+          friendlyError = "E-mail inválido";
+        } else if (rawError.includes("invalid phone")) {
+          friendlyError = "Número de celular inválido";
+        } else if (rawError.includes("invalid name")) {
+          friendlyError = "Nome inválido";
+        } else if (data.detail || data.error) {
+          friendlyError = data.detail ?? data.error;
+        }
+
+        setApiError(friendlyError);
         return;
       }
 
