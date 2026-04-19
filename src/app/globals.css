@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #333333;
+  --vivo-purple: #660099;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--foreground);
+  background: #FFFFFF;
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+@layer base {
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+@layer components {
+  .v-container {
+    @apply max-w-[1200px] mx-auto px-4;
+  }
+  
+  .v-card {
+    @apply bg-white rounded-v-card shadow-v-soft p-6;
+  }
+  
+  .v-button-primary {
+    @apply bg-vivo-purple text-white rounded-v-button px-8 py-3 font-medium transition-all hover:bg-vivo-purple-dark active:scale-[0.98];
+  }
+  
+  .v-input {
+    @apply w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-vivo-purple transition-colors;
+  }
+}

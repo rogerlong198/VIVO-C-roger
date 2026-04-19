@@ -1,0 +1,797 @@
+{
+  "url": "https://recarga.vivo.com.br/recarga",
+  "extractedAt": "2026-04-19T01:26:58.999Z",
+  "siteName": "Recarga Vivo",
+  "logo": {
+    "source": "img",
+    "url": "data:image/png;base64,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",
+    "width": 982,
+    "height": 361,
+    "alt": "logo vivinho",
+    "safeZone": {
+      "top": 4.8,
+      "right": 0,
+      "bottom": 0,
+      "left": 24
+    },
+    "background": "rgb(255, 255, 255)"
+  },
+  "favicons": [
+    {
+      "type": "favicon.ico",
+      "url": "https://recarga.vivo.com.br/favicon.ico",
+      "sizes": null
+    }
+  ],
+  "colors": {
+    "semantic": {},
+    "palette": [
+      {
+        "color": "rgb(255, 255, 255)",
+        "normalized": "#ffffff",
+        "count": 82,
+        "confidence": "high",
+        "sources": [
+          "sc-ihgnwf",
+          "sc-dabbol"
+        ],
+        "lch": "lch(100% 0 158.2)",
+        "oklch": "oklch(100% 0 89.88)"
+      },
+      {
+        "color": "rgb(102, 0, 153)",
+        "normalized": "#660099",
+        "count": 27,
+        "confidence": "high",
+        "sources": [
+          "sc-dabbol"
+        ],
+        "lch": "lch(27.09% 82.21 316.48)",
+        "oklch": "oklch(39.95% 0.204 307.86)"
+      },
+      {
+        "color": "rgb(136, 136, 136)",
+        "normalized": "#888888",
+        "count": 23,
+        "confidence": "high",
+        "sources": [],
+        "lch": "lch(56.7% 0 158.2)",
+        "oklch": "oklch(62.68% 0 89.88)"
+      },
+      {
+        "color": "rgb(205, 30, 90)",
+        "normalized": "#cd1e5a",
+        "count": 12,
+        "confidence": "high",
+        "sources": [
+          "sc-dabbol"
+        ],
+        "lch": "lch(45.15% 68.17 10.26)",
+        "oklch": "oklch(55.39% 0.206 8.56)"
+      },
+      {
+        "color": "rgb(187, 12, 72)",
+        "normalized": "#bb0c48",
+        "count": 1,
+        "confidence": "medium",
+        "sources": [
+          "hover/focus"
+        ]
+      },
+      {
+        "color": "rgb(221, 221, 221)",
+        "normalized": "#dddddd",
+        "count": 1,
+        "confidence": "medium",
+        "sources": [
+          "hover/focus"
+        ]
+      },
+      {
+        "color": "rgb(190, 15, 75)",
+        "normalized": "#be0f4b",
+        "count": 1,
+        "confidence": "medium",
+        "sources": [
+          "hover/focus"
+        ]
+      },
+      {
+        "color": "rgb(194, 19, 79)",
+        "normalized": "#c2134f",
+        "count": 1,
+        "confidence": "medium",
+        "sources": [
+          "hover/focus"
+        ]
+      },
+      {
+        "color": "rgb(91, 0, 142)",
+        "normalized": "#5b008e",
+        "count": 1,
+        "confidence": "medium",
+        "sources": [
+          "hover/focus"
+        ]
+      }
+    ],
+    "cssVariables": {},
+    "_raw": [
+      {
+        "color": "rgb(0, 0, 0)",
+        "normalized": "#000000",
+        "count": 333
+      },
+      {
+        "color": "rgb(255, 255, 255)",
+        "normalized": "#ffffff",
+        "count": 82
+      },
+      {
+        "color": "rgb(221, 221, 221)",
+        "normalized": "#dddddd",
+        "count": 6
+      },
+      {
+        "color": "rgb(102, 0, 153)",
+        "normalized": "#660099",
+        "count": 27
+      },
+      {
+        "color": "rgb(205, 30, 90)",
+        "normalized": "#cd1e5a",
+        "count": 12
+      },
+      {
+        "color": "rgb(136, 136, 136)",
+        "normalized": "#888888",
+        "count": 23
+      },
+      {
+        "color": "rgb(238, 238, 238)",
+        "normalized": "#eeeeee",
+        "count": 8
+      }
+    ]
+  },
+  "typography": {
+    "styles": [
+      {
+        "context": "heading-1",
+        "family": "Roboto",
+        "fallbacks": "Trebuchet MS, Helvetica Neue, Helvetica, Arial",
+        "size": "34px (2.13rem)",
+        "weight": 300,
+        "lineHeight": "1.24",
+        "spacing": "0.2499px",
+        "transform": null
+      },
+      {
+        "context": "heading-1",
+        "family": "Roboto",
+        "fallbacks": "Trebuchet MS, Helvetica Neue, Helvetica, Arial",
+        "size": "28px (1.75rem)",
+        "weight": 300,
+        "lineHeight": "1.14",
+        "spacing": "-0.99988px",
+        "transform": null
+      },
+      {
+        "context": "heading-1",
+        "family": "Roboto",
+        "fallbacks": "Trebuchet MS, Helvetica Neue, Helvetica, Arial",
+        "size": "20px (1.25rem)",
+        "weight": 300,
+        "lineHeight": "1.60",
+        "spacing": "-1px",
+        "transform": null
+      },
+      {
+        "context": "heading-1",
+        "family": "Roboto",
+        "fallbacks": "Trebuchet MS, Helvetica Neue, Helvetica, Arial",
+        "size": "18px (1.13rem)",
+        "weight": 400,
+        "lineHeight": "1.57",
+        "spacing": null,
+        "transform": null
+      },
+      {
+        "context": "button",
+        "family": "sans-serif",
+        "fallbacks": null,
+        "size": "16px (1.00rem)",
+        "weight": 400,
+        "lineHeight": "1.15",
+        "spacing": null,
+        "transform": null
+      },
+      {
+        "context": "link",
+        "family": "Roboto",
+        "fallbacks": "Trebuchet MS, Helvetica Neue, Helvetica, Arial",
+        "size": "16px (1.00rem)",
+        "weight": 300,
+        "lineHeight": "1.75",
+        "spacing": null,
+        "transform": null
+      },
+      {
+        "context": "caption",
+        "family": "Roboto",
+        "fallbacks": "Trebuchet MS, Helvetica Neue, Helvetica, Arial",
+        "size": "14px (0.88rem)",
+        "weight": 500,
+        "lineHeight": "1.75",
+        "spacing": null,
+        "transform": "uppercase"
+      },
+      {
+        "context": "caption",
+        "family": "Roboto",
+        "fallbacks": "Trebuchet MS, Helvetica Neue, Helvetica, Arial",
+        "size": "13px (0.81rem)",
+        "weight": 400,
+        "lineHeight": "1.66",
+        "spacing": null,
+        "transform": null
+      }
+    ],
+    "sources": {
+      "googleFonts": [],
+      "adobeFonts": false,
+      "variableFonts": false
+    }
+  },
+  "spacing": {
+    "scaleType": "8px",
+    "commonValues": [
+      {
+        "px": "1px",
+        "rem": "0.06rem",
+        "count": 26,
+        "numericValue": 1
+      },
+      {
+        "px": "3.2px",
+        "rem": "0.20rem",
+        "count": 1,
+        "numericValue": 3.2
+      },
+      {
+        "px": "4.8px",
+        "rem": "0.30rem",
+        "count": 2,
+        "numericValue": 4.8
+      },
+      {
+        "px": "5px",
+        "rem": "0.31rem",
+        "count": 6,
+        "numericValue": 5
+      },
+      {
+        "px": "6px",
+        "rem": "0.38rem",
+        "count": 32,
+        "numericValue": 6
+      },
+      {
+        "px": "6.4px",
+        "rem": "0.40rem",
+        "count": 3,
+        "numericValue": 6.4
+      },
+      {
+        "px": "8px",
+        "rem": "0.50rem",
+        "count": 8,
+        "numericValue": 8
+      },
+      {
+        "px": "12px",
+        "rem": "0.75rem",
+        "count": 2,
+        "numericValue": 12
+      },
+      {
+        "px": "12.8px",
+        "rem": "0.80rem",
+        "count": 3,
+        "numericValue": 12.8
+      },
+      {
+        "px": "16px",
+        "rem": "1.00rem",
+        "count": 49,
+        "numericValue": 16
+      },
+      {
+        "px": "19.2px",
+        "rem": "1.20rem",
+        "count": 1,
+        "numericValue": 19.2
+      },
+      {
+        "px": "22.4px",
+        "rem": "1.40rem",
+        "count": 3,
+        "numericValue": 22.4
+      },
+      {
+        "px": "24px",
+        "rem": "1.50rem",
+        "count": 16,
+        "numericValue": 24
+      },
+      {
+        "px": "25.6px",
+        "rem": "1.60rem",
+        "count": 2,
+        "numericValue": 25.6
+      },
+      {
+        "px": "32px",
+        "rem": "2.00rem",
+        "count": 7,
+        "numericValue": 32
+      },
+      {
+        "px": "33px",
+        "rem": "2.06rem",
+        "count": 4,
+        "numericValue": 33
+      },
+      {
+        "px": "38.4px",
+        "rem": "2.40rem",
+        "count": 1,
+        "numericValue": 38.4
+      },
+      {
+        "px": "48px",
+        "rem": "3.00rem",
+        "count": 4,
+        "numericValue": 48
+      },
+      {
+        "px": "64px",
+        "rem": "4.00rem",
+        "count": 2,
+        "numericValue": 64
+      },
+      {
+        "px": "112px",
+        "rem": "7.00rem",
+        "count": 1,
+        "numericValue": 112
+      }
+    ]
+  },
+  "borderRadius": {
+    "values": [
+      {
+        "value": "4px",
+        "count": 46,
+        "elements": [
+          "button",
+          "div",
+          "input"
+        ],
+        "confidence": "high",
+        "numericValue": 4
+      },
+      {
+        "value": "8px",
+        "count": 1,
+        "elements": [
+          "div"
+        ],
+        "confidence": "low",
+        "numericValue": 8
+      },
+      {
+        "value": "50%",
+        "count": 1,
+        "elements": [
+          "button"
+        ],
+        "confidence": "low",
+        "numericValue": 50
+      }
+    ]
+  },
+  "borders": {
+    "combinations": [
+      {
+        "width": "1px",
+        "style": "solid",
+        "color": "rgb(205, 30, 90)",
+        "count": 15,
+        "elements": [
+          "button"
+        ],
+        "confidence": "high"
+      },
+      {
+        "width": "1px",
+        "style": "solid",
+        "color": "rgb(221, 221, 221)",
+        "count": 14,
+        "elements": [
+          "div",
+          "input"
+        ],
+        "confidence": "high"
+      },
+      {
+        "width": "1px",
+        "style": "solid",
+        "color": "rgb(238, 238, 238)",
+        "count": 8,
+        "elements": [
+          "div"
+        ],
+        "confidence": "medium"
+      },
+      {
+        "width": "1px",
+        "style": "solid",
+        "color": "rgb(102, 0, 153)",
+        "count": 3,
+        "elements": [
+          "button"
+        ],
+        "confidence": "low"
+      },
+      {
+        "width": "0px 0px 1px",
+        "style": "none none solid",
+        "color": "rgb(0, 0, 0)",
+        "count": 1,
+        "elements": [
+          "div"
+        ],
+        "confidence": "low"
+      },
+      {
+        "width": "1px",
+        "style": "solid",
+        "color": "rgba(102, 0, 153, 0.565)",
+        "count": 1,
+        "elements": [
+          "button"
+        ],
+        "confidence": "low"
+      },
+      {
+        "width": "1px",
+        "style": "solid",
+        "color": "rgba(0, 0, 0, 0.26)",
+        "count": 1,
+        "elements": [
+          "button"
+        ],
+        "confidence": "low"
+      },
+      {
+        "width": "2px",
+        "style": "inset",
+        "color": "rgb(0, 0, 0)",
+        "count": 1,
+        "elements": [
+          "iframe"
+        ],
+        "confidence": "low"
+      }
+    ]
+  },
+  "shadows": [
+    {
+      "shadow": "rgba(0, 0, 0, 0.2) 0px 3px 1px -2px, rgba(0, 0, 0, 0.14) 0px 2px 2px 0px, rgba(0, 0, 0, 0.12) 0px 1px 5px 0px",
+      "count": 16,
+      "confidence": "high"
+    },
+    {
+      "shadow": "rgba(0, 0, 0, 0.2) 0px 2px 1px -1px, rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px",
+      "count": 13,
+      "confidence": "high"
+    }
+  ],
+  "components": {
+    "buttons": [
+      {
+        "states": {
+          "default": {
+            "backgroundColor": "rgb(205, 30, 90)",
+            "color": "rgb(255, 255, 255)",
+            "padding": "6px 42px",
+            "borderRadius": "4px",
+            "border": "1px solid rgb(205, 30, 90)",
+            "boxShadow": "none",
+            "outline": "rgb(255, 255, 255) none 3px",
+            "transform": "none",
+            "opacity": "1"
+          },
+          "hover": {
+            "backgroundColor": "rgb(180, 5, 65)",
+            "outline": "none",
+            "opacity": "1"
+          },
+          "active": null,
+          "focus": {
+            "outline": "none",
+            "opacity": "1"
+          }
+        },
+        "fontWeight": "400",
+        "fontSize": "16px",
+        "classes": "sc-dAbbOL iSZVaK sc-iEXKAA jNbefD my_number_button",
+        "confidence": "high"
+      },
+      {
+        "states": {
+          "default": {
+            "backgroundColor": "rgb(255, 255, 255)",
+            "color": "rgb(0, 0, 0)",
+            "padding": "6px 42px",
+            "borderRadius": "4px",
+            "border": "0px none rgb(255, 255, 255)",
+            "boxShadow": "none",
+            "outline": "rgb(0, 0, 0) none 3px",
+            "transform": "none",
+            "opacity": "1"
+          },
+          "hover": {
+            "backgroundColor": "rgb(199, 199, 199)",
+            "outline": "none",
+            "opacity": "1"
+          },
+          "active": null,
+          "focus": {
+            "outline": "none",
+            "opacity": "1"
+          }
+        },
+        "fontWeight": "400",
+        "fontSize": "16px",
+        "classes": "sc-dAbbOL hrTdJQ sc-iEXKAA jrbWbn another_number_b",
+        "confidence": "high"
+      },
+      {
+        "states": {
+          "default": {
+            "backgroundColor": "rgb(205, 30, 90)",
+            "color": "rgb(255, 255, 255)",
+            "padding": "6px 16px",
+            "borderRadius": "4px",
+            "border": "1px solid rgb(205, 30, 90)",
+            "boxShadow": "rgba(0, 0, 0, 0.2) 0px 3px 1px -2px, rgba(0, 0, 0, 0.14) 0px 2px 2px 0px, rgba(0, 0, 0, 0.12) 0px 1px 5px 0px",
+            "outline": "rgb(255, 255, 255) none 3px",
+            "transform": "none",
+            "opacity": "1"
+          },
+          "hover": {
+            "backgroundColor": "rgb(180, 5, 65)",
+            "boxShadow": "rgba(0, 0, 0, 0.2) 0px 2px 4px -1px, rgba(0, 0, 0, 0.14) 0px 4px 5px 0px, rgba(0, 0, 0, 0.12) 0px 1px 10px 0px",
+            "outline": "none",
+            "opacity": "1"
+          },
+          "active": null,
+          "focus": {
+            "outline": "none",
+            "opacity": "1"
+          }
+        },
+        "fontWeight": "400",
+        "fontSize": "16px",
+        "classes": "sc-dAbbOL bdaWVA recharge_value_button",
+        "confidence": "high"
+      },
+      {
+        "states": {
+          "default": {
+            "backgroundColor": "rgb(102, 0, 153)",
+            "color": "rgb(255, 255, 255)",
+            "padding": "8px 22px",
+            "borderRadius": "4px",
+            "border": "1px solid rgb(102, 0, 153)",
+            "boxShadow": "rgba(0, 0, 0, 0.2) 0px 3px 1px -2px, rgba(0, 0, 0, 0.14) 0px 2px 2px 0px, rgba(0, 0, 0, 0.12) 0px 1px 5px 0px",
+            "outline": "rgb(255, 255, 255) none 3px",
+            "transform": "none",
+            "opacity": "1"
+          },
+          "hover": {
+            "backgroundColor": "rgb(77, 0, 128)",
+            "boxShadow": "rgba(0, 0, 0, 0.2) 0px 2px 4px -1px, rgba(0, 0, 0, 0.14) 0px 4px 5px 0px, rgba(0, 0, 0, 0.12) 0px 1px 10px 0px",
+            "outline": "none",
+            "opacity": "1"
+          },
+          "active": null,
+          "focus": {
+            "outline": "none",
+            "opacity": "1"
+          }
+        },
+        "fontWeight": "400",
+        "fontSize": "16px",
+        "classes": "sc-dAbbOL iOplBi",
+        "confidence": "high"
+      },
+      {
+        "states": {
+          "default": {
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "color": "rgb(102, 0, 153)",
+            "padding": "8px 22px",
+            "borderRadius": "4px",
+            "border": "1px solid rgba(102, 0, 153, 0.565)",
+            "boxShadow": "none",
+            "outline": "rgb(102, 0, 153) none 3px",
+            "transform": "none",
+            "opacity": "1"
+          },
+          "hover": {
+            "backgroundColor": "rgba(102, 0, 153, 0.063)",
+            "border": "1px solid rgb(102, 0, 153)",
+            "outline": "none",
+            "opacity": "1"
+          },
+          "active": null,
+          "focus": {
+            "outline": "none",
+            "opacity": "1"
+          }
+        },
+        "fontWeight": "400",
+        "fontSize": "16px",
+        "classes": "sc-dAbbOL lbA-diP",
+        "confidence": "high"
+      },
+      {
+        "states": {
+          "default": {
+            "backgroundColor": "rgb(102, 0, 153)",
+            "color": "rgb(255, 255, 255)",
+            "padding": "8px 22px",
+            "borderRadius": "4px",
+            "border": "1px solid rgb(102, 0, 153)",
+            "boxShadow": "none",
+            "outline": "rgb(255, 255, 255) none 3px",
+            "transform": "none",
+            "opacity": "1"
+          },
+          "hover": {
+            "backgroundColor": "rgb(77, 0, 128)",
+            "outline": "none",
+            "opacity": "1"
+          },
+          "active": null,
+          "focus": {
+            "outline": "none",
+            "opacity": "1"
+          }
+        },
+        "fontWeight": "400",
+        "fontSize": "16px",
+        "classes": "sc-dAbbOL hBkfhk sc-lnPyaJ gGmSah",
+        "confidence": "high"
+      },
+      {
+        "states": {
+          "default": {
+            "backgroundColor": "rgb(255, 255, 255)",
+            "color": "rgb(0, 0, 0)",
+            "padding": "12px 14px",
+            "borderRadius": "50%",
+            "border": "1px solid rgba(0, 0, 0, 0.26)",
+            "boxShadow": "none",
+            "outline": "rgb(0, 0, 0) none 3px",
+            "transform": "none",
+            "opacity": "1"
+          },
+          "hover": {
+            "backgroundColor": "rgba(50, 50, 50, 0.125)",
+            "outline": "none",
+            "opacity": "1"
+          },
+          "active": null,
+          "focus": {
+            "outline": "none",
+            "opacity": "1"
+          }
+        },
+        "fontWeight": "400",
+        "fontSize": "16px",
+        "classes": "sc-dAbbOL dKzXYz sc-ERObt gMoEKu",
+        "confidence": "high"
+      }
+    ],
+    "inputs": {
+      "text": [
+        {
+          "specificType": "text",
+          "states": {
+            "default": {
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "color": "rgb(45, 55, 71)",
+              "border": "1px solid rgb(221, 221, 221)",
+              "borderRadius": "4px",
+              "padding": "24.8px 13.6px 8.8px",
+              "boxShadow": "none",
+              "outline": "rgb(45, 55, 71) none 0px"
+            },
+            "focus": {
+              "borderColor": "rgba(45, 55, 71, 0.314)",
+              "boxShadow": "rgba(45, 55, 71, 0.145) 0px 0px 0px 0.15rem"
+            }
+          }
+        }
+      ],
+      "checkbox": [],
+      "radio": [],
+      "select": []
+    },
+    "links": [
+      {
+        "color": "rgb(136, 136, 136)",
+        "textDecoration": "underline",
+        "fontWeight": "300",
+        "states": {
+          "default": {
+            "color": "rgb(136, 136, 136)",
+            "textDecoration": "underline"
+          },
+          "hover": null
+        }
+      }
+    ],
+    "badges": {
+      "all": [],
+      "byVariant": {
+        "error": [],
+        "warning": [],
+        "success": [],
+        "info": [],
+        "neutral": []
+      }
+    }
+  },
+  "breakpoints": [
+    {
+      "px": "549px"
+    },
+    {
+      "px": "550px"
+    },
+    {
+      "px": "767px"
+    },
+    {
+      "px": "768px"
+    },
+    {
+      "px": "775px"
+    },
+    {
+      "px": "877px"
+    },
+    {
+      "px": "1023px"
+    },
+    {
+      "px": "1024px"
+    },
+    {
+      "px": "1125px"
+    },
+    {
+      "px": "1511px"
+    },
+    {
+      "px": "1512px"
+    }
+  ],
+  "iconSystem": [],
+  "frameworks": []
+}
