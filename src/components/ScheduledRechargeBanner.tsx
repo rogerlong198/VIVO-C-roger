@@ -9,20 +9,21 @@ export function ScheduledRechargeBanner() {
         </p>
 
         <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#6a0dad] via-[#8b1dbf] to-[#b026d3] shadow-lg">
-          {/* Imagem de fundo (homem com celular) */}
-          <div className="pointer-events-none absolute bottom-0 right-0 h-full w-[55%] md:w-[50%]">
-            <Image
-              src="/banner-recarga-agendada.png"
-              alt="Homem segurando celular com tela roxa"
-              fill
-              sizes="(max-width: 768px) 55vw, 400px"
-              className="object-contain object-right-bottom"
-              priority={false}
-            />
-          </div>
+          {/* Imagem de fundo cobrindo o card inteiro */}
+          <Image
+            src="/banner-recarga-agendada.png"
+            alt="Homem segurando celular com tela roxa"
+            fill
+            sizes="(max-width: 768px) 100vw, 600px"
+            className="pointer-events-none object-cover object-right"
+            priority={false}
+          />
 
-          {/* Conteúdo textual */}
-          <div className="relative z-10 flex flex-col gap-3 p-5 md:p-7">
+          {/* Gradiente sobre a imagem para garantir legibilidade do texto à esquerda */}
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#6a0dad] via-[#6a0dad]/70 to-transparent" />
+
+          {/* Conteúdo textual sobreposto */}
+          <div className="relative z-10 flex min-h-[420px] flex-col gap-3 p-5 md:min-h-[340px] md:p-7">
             {/* Logo Pré */}
             <div className="flex items-center gap-1.5">
               <svg
@@ -41,8 +42,8 @@ export function ScheduledRechargeBanner() {
               <span className="text-lg font-semibold text-white md:text-xl">Pré</span>
             </div>
 
-            {/* Espaço para a imagem aparecer */}
-            <div className="h-16 md:h-20" />
+            {/* Empurra o conteúdo para a parte inferior do card */}
+            <div className="flex-1" />
 
             {/* Badge */}
             <div className="inline-flex w-fit items-center rounded-full bg-white px-4 py-1.5 shadow-sm">
@@ -52,12 +53,12 @@ export function ScheduledRechargeBanner() {
             </div>
 
             {/* Título */}
-            <h3 className="max-w-[60%] text-balance text-xl font-bold leading-tight text-white md:max-w-[65%] md:text-2xl">
+            <h3 className="max-w-[75%] text-balance text-xl font-bold leading-tight text-white md:max-w-[60%] md:text-2xl">
               Bônus de 10GB todo mês
             </h3>
 
             {/* Descrição */}
-            <p className="max-w-[60%] text-pretty text-sm leading-relaxed text-white/90 md:max-w-[65%] md:text-base">
+            <p className="max-w-[75%] text-pretty text-sm leading-relaxed text-white/90 md:max-w-[60%] md:text-base">
               Defina valor e dia da recarga e receba seus 10GB de bônus todo mês.
             </p>
 
