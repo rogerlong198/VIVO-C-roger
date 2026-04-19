@@ -29,7 +29,7 @@ export const RechargeForm = () => {
     setValue('phone', value);
   };
 
-  const onSubmit = (data: any) => {
+  const onSubmit = (data: z.infer<typeof formSchema>) => {
     console.log(data);
   };
 

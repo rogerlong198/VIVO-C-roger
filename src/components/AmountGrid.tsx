@@ -4,7 +4,15 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 
-const allOffers = [
+interface Offer {
+  id: number;
+  totalInternet: string;
+  price: string;
+  details: string[];
+  isFeatured: boolean;
+}
+
+const allOffers: Offer[] = [
   { id: 1, totalInternet: '25 GB de internet', price: '30', details: ['15 GB de uso livre', '5 GB de bônus', '5 GB de YouTube'], isFeatured: true },
   { id: 2, totalInternet: '11 GB de internet', price: '25', details: ['6 GB de uso livre', '2 GB de bônus', '3 GB de YouTube'], isFeatured: false },
   { id: 3, totalInternet: '6 GB de internet', price: '20', details: ['5 GB de uso livre', '1 GB de bônus'], isFeatured: false },
@@ -82,7 +90,7 @@ export const AmountGrid = () => {
   );
 };
 
-const OfferCard = ({ offer }: { offer: any }) => (
+const OfferCard = ({ offer }: { offer: Offer }) => (
   <motion.div
     whileHover={{ scale: 1.01 }}
     whileTap={{ scale: 0.99 }}
