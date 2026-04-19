@@ -9,7 +9,7 @@ export const Hero = () => {
       <motion.img 
         initial={{ opacity: 0, scale: 1.1 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 1.2, ease: "easeOut" }}
+        transition={{ duration: 1.2, ease: "easeOut" as any }}
         src="/banner-vivo.png" 
         alt="Promoção Vivo Pré" 
         className="w-full h-full object-cover md:object-fill"

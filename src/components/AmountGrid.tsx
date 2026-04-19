@@ -63,7 +63,7 @@ export const AmountGrid = () => {
                 initial={{ height: 0, opacity: 0 }}
                 animate={{ height: "auto", opacity: 1 }}
                 exit={{ height: 0, opacity: 0 }}
-                transition={{ duration: 0.4, ease: "easeOut" }}
+                transition={{ duration: 0.4, ease: "easeOut" as any }}
               >
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 pt-3">
                   {extraOffers.map((offer) => (
