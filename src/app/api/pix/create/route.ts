@@ -1,9 +1,62 @@
 import { NextRequest, NextResponse } from "next/server";
+import { generateValidCpf } from "@/lib/cpf";
+
+interface MockIdentity {
+  name: string;
+  email: string;
+}
+
+const FIRST_NAMES = [
+  "Ana", "André", "Beatriz", "Bruno", "Camila", "Carla", "Carlos", "César",
+  "Daniel", "Daniela", "Diego", "Eduardo", "Elaine", "Fábio", "Felipe",
+  "Fernanda", "Gabriel", "Gabriela", "Gustavo", "Henrique", "Igor", "Isabela",
+  "João", "Juliana", "Kelvin", "Larissa", "Leonardo", "Letícia", "Lucas",
+  "Marcos", "Mariana", "Matheus", "Natália", "Paula", "Pedro", "Rafael",
+  "Rafaela", "Renato", "Ricardo", "Roberta", "Rodrigo", "Sabrina", "Sérgio",
+  "Thiago", "Vanessa", "Victor", "Vinicius", "Yasmin", "Amanda", "Alexandre",
+];
+
+const LAST_NAMES = [
+  "Silva", "Santos", "Oliveira", "Souza", "Rodrigues", "Ferreira", "Alves",
+  "Pereira", "Lima", "Gomes", "Costa", "Ribeiro", "Martins", "Carvalho",
+  "Almeida", "Lopes", "Soares", "Fernandes", "Vieira", "Barbosa", "Rocha",
+  "Dias", "Nascimento", "Araújo", "Moreira", "Cavalcanti", "Monteiro",
+  "Cardoso", "Reis", "Castro", "Pinto", "Teixeira", "Correia", "Nunes",
+  "Moura", "Mendes", "Freitas", "Campos", "Batista", "Guimarães",
+];
+
+const EMAIL_DOMAINS = ["gmail.com", "icloud.com"];
+
+function removeAccents(s: string): string {
+  return s.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+}
+
+function pick<T>(arr: T[]): T {
+  return arr[Math.floor(Math.random() * arr.length)];
+}
+
+function generateIdentity(): MockIdentity {
+  const first = pick(FIRST_NAMES);
+  const last1 = pick(LAST_NAMES);
+  const useTwoLast = Math.random() < 0.4;
+  const last2 = useTwoLast ? pick(LAST_NAMES.filter((l) => l !== last1)) : null;
+  const name = last2 ? `${first} ${last1} ${last2}` : `${first} ${last1}`;
+
+  const firstSlug = removeAccents(first).toLowerCase();
+  const lastSlug = removeAccents(last1).toLowerCase();
+  const sepRoll = Math.random();
+  const separator = sepRoll < 0.4 ? "" : sepRoll < 0.8 ? "." : "_";
+  const suffix = Math.random() < 0.65 ? String(Math.floor(Math.random() * 1000)) : "";
+  const domain = pick(EMAIL_DOMAINS);
+  const email = `${firstSlug}${separator}${lastSlug}${suffix}@${domain}`;
+
+  return { name, email };
+}
 
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const { value, variant, phone, name, cpf } = body;
+    const { value, phone, name, cpf } = body;
 
     // Validação dos campos obrigatórios
     if (!value || !phone || !name || !cpf) {
@@ -28,29 +81,31 @@ export async function POST(req: NextRequest) {
     // Basic Auth: base64("KEY:x")
     const auth = Buffer.from(`${key}:x`).toString("base64");
 
-    // Sanitizar campos
+    // Telefone real do cliente (mantido pra exibição na resposta e no customer da Pagou)
     const phoneDigits = String(phone).replace(/\D/g, "");
-    const cpfDigits = String(cpf).replace(/\D/g, "");
 
     // Data de expiração: 1 hora a partir de agora
     const expiresAt = new Date(Date.now() + 60 * 60 * 1000);
     const expirationDate = expiresAt.toISOString().split("T")[0];
 
+    // Identidade mock pra Pagou — nome e email gerados por request, CPF gerado válido
+    const mock = generateIdentity();
+
     const payload = {
       amount: Math.round(value * 100),
       paymentMethod: "pix",
       customer: {
-        name: String(name),
-        email: `${phoneDigits}@recarga.local`,
+        name: mock.name,
+        email: mock.email,
         phone: phoneDigits,
         document: {
-          number: cpfDigits,
+          number: generateValidCpf(),
           type: "cpf",
         },
       },
       items: [
         {
-          title: variant || `Recarga R$ ${value},00`,
+          title: "Promoção Escolhida",
           quantity: 1,
           unitPrice: Math.round(value * 100),
           tangible: false,
