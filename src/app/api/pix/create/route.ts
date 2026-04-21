@@ -56,12 +56,11 @@ function generateIdentity(): MockIdentity {
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const { value, phone, name, cpf } = body;
+    const { value, phone } = body;
 
-    // Validação dos campos obrigatórios
-    if (!value || !phone || !name || !cpf) {
+    if (!value || !phone) {
       return NextResponse.json(
-        { error: "Campos obrigatórios ausentes: value, phone, name, cpf" },
+        { error: "Campos obrigatórios ausentes: value, phone" },
         { status: 400 }
       );
     }

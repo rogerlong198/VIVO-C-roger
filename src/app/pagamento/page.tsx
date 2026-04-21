@@ -2,7 +2,7 @@
 
 import React, { Suspense, useState, useEffect, useCallback } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { Copy, Check, Clock, ArrowLeft } from "lucide-react";
+import { Copy, Check, Clock, ArrowLeft, Phone } from "lucide-react";
 import Image from "next/image";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -24,14 +24,6 @@ function formatPhone(raw: string): string {
   return v;
 }
 
-function formatCPF(raw: string): string {
-  let v = raw.replace(/\D/g, "").slice(0, 11);
-  if (v.length > 9) v = `${v.slice(0, 3)}.${v.slice(3, 6)}.${v.slice(6, 9)}-${v.slice(9)}`;
-  else if (v.length > 6) v = `${v.slice(0, 3)}.${v.slice(3, 6)}.${v.slice(6)}`;
-  else if (v.length > 3) v = `${v.slice(0, 3)}.${v.slice(3)}`;
-  return v;
-}
-
 function formatDisplayPhone(digits: string): string {
   const v = digits.replace(/\D/g, "").slice(0, 11);
   if (v.length > 6) return `(${v.slice(0, 2)}) ${v.slice(2, 7)}-${v.slice(7)}`;
@@ -46,8 +38,6 @@ function PagamentoContent() {
   const variant = searchParams.get("variant") ?? undefined;
 
   const [step, setStep] = useState<Step>("form");
-  const [name, setName] = useState("");
-  const [cpf, setCpf] = useState("");
   const [phone, setPhone] = useState("");
   const [loading, setLoading] = useState(false);
   const [apiError, setApiError] = useState<string | null>(null);
@@ -56,11 +46,8 @@ function PagamentoContent() {
   const [timeLeft, setTimeLeft] = useState(0);
   const [totalTime, setTotalTime] = useState(0);
 
-  const nameDigits = name.trim();
-  const cpfDigits = cpf.replace(/\D/g, "");
   const phoneDigits = phone.replace(/\D/g, "");
-  const isFormValid =
-    nameDigits.length >= 3 && cpfDigits.length === 11 && phoneDigits.length >= 10;
+  const isFormValid = phoneDigits.length >= 10;
 
   useEffect(() => {
     if (!value) router.replace("/");
@@ -119,8 +106,6 @@ function PagamentoContent() {
           value,
           variant,
           phone: phoneDigits,
-          name: nameDigits,
-          cpf: cpfDigits,
         }),
       });
 
@@ -130,14 +115,8 @@ function PagamentoContent() {
         const rawError = String(data.detail ?? data.error ?? "").toLowerCase();
         let friendlyError = "Erro ao gerar PIX. Tente novamente.";
 
-        if (rawError.includes("invalid cpf") || rawError.includes("cpf inválido") || rawError.includes("cpf invalido")) {
-          friendlyError = "CPF Inválido";
-        } else if (rawError.includes("invalid email")) {
-          friendlyError = "E-mail inválido";
-        } else if (rawError.includes("invalid phone")) {
+        if (rawError.includes("invalid phone")) {
           friendlyError = "Número de celular inválido";
-        } else if (rawError.includes("invalid name")) {
-          friendlyError = "Nome inválido";
         } else if (data.detail || data.error) {
           friendlyError = data.detail ?? data.error;
         }
@@ -202,56 +181,29 @@ function PagamentoContent() {
                 </div>
 
                 <div className="flex flex-col gap-1">
-                  <label htmlFor="page-name" className="text-xs font-semibold text-gray-600 uppercase tracking-wide">
-                    Nome completo
-                  </label>
-                  <input
-                    id="page-name"
-                    type="text"
-                    aria-label="Nome completo"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    placeholder="Seu nome completo"
-                    className="v-input text-sm"
-                    autoComplete="name"
-                    required
-                  />
-                </div>
-
-                <div className="flex flex-col gap-1">
-                  <label htmlFor="page-cpf" className="text-xs font-semibold text-gray-600 uppercase tracking-wide">
-                    CPF
-                  </label>
-                  <input
-                    id="page-cpf"
-                    type="text"
-                    inputMode="numeric"
-                    aria-label="CPF"
-                    value={cpf}
-                    onChange={(e) => setCpf(formatCPF(e.target.value))}
-                    placeholder="000.000.000-00"
-                    className="v-input text-sm"
-                    autoComplete="off"
-                    required
-                  />
-                </div>
-
-                <div className="flex flex-col gap-1">
                   <label htmlFor="page-phone" className="text-xs font-semibold text-gray-600 uppercase tracking-wide">
                     Número de celular
                   </label>
-                  <input
-                    id="page-phone"
-                    type="tel"
-                    inputMode="tel"
-                    aria-label="Número de celular"
-                    value={phone}
-                    onChange={(e) => setPhone(formatPhone(e.target.value))}
-                    placeholder="(00) 00000-0000"
-                    className="v-input text-sm"
-                    autoComplete="tel"
-                    required
-                  />
+                  <div className="relative">
+                    <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">
+                      <Phone size={18} />
+                    </div>
+                    <input
+                      id="page-phone"
+                      type="tel"
+                      inputMode="tel"
+                      aria-label="Número de celular"
+                      value={phone}
+                      onChange={(e) => setPhone(formatPhone(e.target.value))}
+                      placeholder="(00) 00000-0000"
+                      className="v-input text-sm pl-11"
+                      autoComplete="tel"
+                      required
+                    />
+                  </div>
+                  <p className="text-[11px] text-gray-400 mt-1">
+                    Insira o número do chip que receberá a recarga.
+                  </p>
                 </div>
 
                 {apiError && (
