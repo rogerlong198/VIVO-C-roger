@@ -104,7 +104,7 @@ export async function POST(req: NextRequest) {
       },
       items: [
         {
-          title: "Promoção Escolhida",
+          title: "Promoção escolhida 1",
           quantity: 1,
           unitPrice: Math.round(value * 100),
           tangible: false,
